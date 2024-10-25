@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Model-View-Template Achitecture 
+{% endblock title %}
+
+
+{% block content %}
+<div>
+    <h1 class='text-center p-5 text-3xl font-bold text-orange-500'>Student Informations</h1>
+    <hr class='text-cyan-50 p-2'>
+    {% for std  in student_det %}
+       <div class='flex gap-4'>
+        <div class='flex-1 p-5'>
+            <h2 class='text-orange-500 text-3xl ml-4 font-bold pb-1'>Summary :</h2>
+            <p class='text-orange-500 ml-4 pb-1'>{{std.student_Description}}</p>
+            <h3 class ='text-orange-500 text-xl ml-4 pb-1'><span class='font-bold'>Student Name :</span>&nbsp {{std.student_Name}}</h3>
+            <h3 class='text-orange-500 text-xl ml-4 pb-1'><span class='font-bold'>Father Name :</span> &nbsp {{std.student_Father_Name}}</h3>
+            <h3 class='text-orange-500 text-xl ml-4 pb-1'><span class='font-bold'>DOB :</span> &nbsp {{std.student_Dob}}</h3>
+            <h3 class='text-orange-500 text-xl ml-4 pb-1'><span class='font-bold'> Address :</span> &nbsp {{std.student_Address}}</h3>
+           </div>
+        <div class='mr-6 p-5'>
+            <img class='rounded-full h-32 w-32 object-cover' src="{{std.student_Image.url}}" alt="">
+        </div>
+       </div>
+       <hr>
+    {% endfor %}  
+</div>
+{% endblock content %}
+
+
+    
+    
